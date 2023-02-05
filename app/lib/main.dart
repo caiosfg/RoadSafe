@@ -14,25 +14,42 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-        child: Stack(
-          alignment: AlignmentDirectional.bottomEnd,
-          children: [
-            Container(color: Colors.cyan),
-            Container(
-              color: Colors.yellow,
-              height: 300,
-            ),
-            Container(
-              alignment: AlignmentDirectional.bottomCenter,
-              child: Text(
-                'RoadSafe',
-                style: TextStyle(color: Colors.black, fontSize: 42),
-                textAlign: TextAlign.center,
-              ),
-            )
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'RoadSafe',
+            style: TextStyle(color: Colors.white, fontSize: 24),
+            textAlign: TextAlign.center,
+          ),
         ),
+        body: Container(
+          child: Stack(
+            alignment: AlignmentDirectional.bottomEnd,
+            children: [
+              Container(
+                  color: Colors.cyan,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        color: Colors.black26,
+                        width: 93,
+                      ),
+                      Text('Перелік пунктів',
+                          style: TextStyle(color: Colors.black, fontSize: 12),
+                          textAlign: TextAlign.center),
+                      ElevatedButton(onPressed: () {}, child: Icon(Icons.home))
+                    ],
+                  ),
+              ),
+              Container(
+                color: Colors.yellow,
+                height: 200,
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
       ),
     );
   }
