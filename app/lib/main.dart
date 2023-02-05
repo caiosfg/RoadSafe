@@ -14,12 +14,25 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Stack(
-        alignment: AlignmentDirectional.bottomEnd,
-        children: [
-          Container(color: Colors.cyan),
-          Container(color: Colors.yellow, height: 300,),
-        ],
+      home: Container(
+        child: Stack(
+          alignment: AlignmentDirectional.bottomEnd,
+          children: [
+            Container(color: Colors.cyan),
+            Container(
+              color: Colors.yellow,
+              height: 300,
+            ),
+            Container(
+              alignment: AlignmentDirectional.bottomCenter,
+              child: Text(
+                'RoadSafe',
+                style: TextStyle(color: Colors.black, fontSize: 42),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
